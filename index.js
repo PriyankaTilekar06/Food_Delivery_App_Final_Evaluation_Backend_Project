@@ -14,6 +14,9 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
 
 app.use('/', require('./routes/authRoutes'))
+app.use('/products', require('./routes/productRoutes'))
+// app.use('/images', express.static('./'));
+
 
 const port = 8000
 app.listen(port, () =>{

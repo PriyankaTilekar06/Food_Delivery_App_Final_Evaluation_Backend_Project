@@ -11,7 +11,7 @@ app.get('/', async (req, res) => {
     }
 });
 
-// Add a new product
+
 app.post('/', async (req, res) => {
     try {
         const { title, description, image, price } = req.body;
@@ -27,7 +27,7 @@ app.post('/', async (req, res) => {
     }
 });
 
-// Update a product by ID
+
 app.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -49,7 +49,6 @@ app.put('/:id', async (req, res) => {
     }
 });
 
-// Delete a product by ID
 app.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;

@@ -2,25 +2,25 @@
     {
         "title": "The classics for 3",
         "description": "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium-sized French Fries, 3 cold drinks",
-        "image": "fries1.png",
+        "image": "https://res.cloudinary.com/duwqzyhyj/image/upload/v1732731336/yyua17haxlv7mheznn8h.png",
         "price": 120
     },
     {
         "title": "The family delight",
         "description": "2 Big Macs™, 2 Cheeseburgers, 4 medium-sized French Fries, 4 cold drinks",
-        "image": "fries1.png",
+        "image": "https://res.cloudinary.com/duwqzyhyj/image/upload/v1732731379/mvxxrh8aupywbbmo38zg.png",
         "price": 250
     },
     {
         "title": "Snack time combo",
         "description": "1 Cheeseburger, 1 medium-sized French Fries, 1 cold drink",
-        "image": "fries1.png",
-        "price": 90
+        "image": "https://res.cloudinary.com/duwqzyhyj/image/upload/v1732731420/hrie9stisjwvzsfwr7ly.png",
+        "price": 190
     },
     {
         "title": "Party pack",
         "description": "5 Big Macs™, 5 large-sized French Fries, 5 cold drinks",
-        "image": "fries1.png",
+        "image": "https://res.cloudinary.com/duwqzyhyj/image/upload/v1732731454/z8yignbwluzr2zixvtkn.png",
         "price": 600
     }
 ]

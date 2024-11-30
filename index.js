@@ -13,10 +13,15 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
 
-app.use('/', require('./routes/authRoutes'))
+app.use('/auth', require('./routes/authRoutes'))
 app.use('/products', require('./routes/productRoutes'))
-// app.use('/images', express.static('./'));
-
+app.get("/", (req, res) => {
+    try {
+      res.status(200).send({message:"Hello World!"}); 
+    } catch (error) {
+      res.status(500).send({ error: error.message });
+    }
+  });
 
 const port = 8000
 app.listen(port, () =>{

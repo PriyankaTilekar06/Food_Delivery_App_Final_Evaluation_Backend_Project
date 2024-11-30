@@ -9,6 +9,16 @@ mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log('Database Connected'))
 .catch((err) => console.log('Database not connected',err))
 
+const corsOptions = {
+    origin : process.env.FRONTEND_URL,
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-csrf-token", "X-Requested-With"],
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE","OPTIONS"],
+  };
+  
+  app.use(cors(corsOptions));
+  
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))

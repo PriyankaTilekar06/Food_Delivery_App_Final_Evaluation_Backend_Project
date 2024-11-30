@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
         })
         return res.json(user)
     } catch (error) {
-        console.log(error)
+        res.json(error)
     }
 }
 

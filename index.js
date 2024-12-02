@@ -9,29 +9,15 @@ mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log('Database Connected'))
 .catch((err) => console.log('Database not connected',err))
 
-// const corsOptions = {
-//     origin : process.env.FRONTEND_URL,
-//     credentials: true,
-//     allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-csrf-token", "X-Requested-With"],
-//     methods: ["GET", "POST", "PATCH", "PUT", "DELETE","OPTIONS"],
-//   };
+const corsOptions = {
+    origin : process.env.FRONTEND_URL,
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-csrf-token", "X-Requested-With"],
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE","OPTIONS"],
+  };
   
-//   app.use(cors(corsOptions));
-const allowedOrigins = [
-  'https://food-delivery-app-final-evaluation-frontend-project-2oxo.vercel.app',
-  'http://localhost:5173', // for local development
-];
+  app.use(cors(corsOptions));
 
-app.use(cors({
-  origin: function(origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, // Allow cookies to be sent and received
-}))
   
 
 app.use(express.json())

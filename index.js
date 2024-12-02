@@ -9,8 +9,13 @@ mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log('Database Connected'))
 .catch((err) => console.log('Database not connected',err))
 
+const allowedOrigins = [
+  'https://food-delivery-app-final-evaluation-frontend-project-2oxo.vercel.app',  // Your deployed frontend URL
+  'http://localhost:5173',  // For local development
+];
+
 const corsOptions = {
-    origin : process.env.FRONTEND_URL,
+    origin : allowedOrigins,
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-csrf-token", "X-Requested-With"],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE","OPTIONS"],

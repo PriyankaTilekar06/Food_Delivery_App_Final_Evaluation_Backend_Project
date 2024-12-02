@@ -6,7 +6,7 @@ const { registerUser, loginUser, getProfile } = require('../controllers/authCont
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:5173'
+        origin: 'https://food-delivery-app-final-evaluation-frontend-project-2oxo.vercel.app/'
     })
 )
 

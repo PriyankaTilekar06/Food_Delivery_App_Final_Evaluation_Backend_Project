@@ -8,9 +8,10 @@ const app = express();
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Database Connected'))
   .catch((err) => console.log('Database not connected', err));
-
 const allowedOrigins = [
-  'https://food-delivery-app-final-evaluation-frontend-project-2oxo.vercel.app'
+  // 'https://food-delivery-app-final-evaluation-frontend-project-2oxo.vercel.app',
+  // 'http://localhost:5173'
+  'https://food-delivery-app-final-evaluation-frontend-project.vercel.app'
 ];
 
 const corsOptions = {

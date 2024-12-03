@@ -15,30 +15,28 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // Check if the origin is in the allowedOrigins array or if origin is not defined (for local testing)
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true,  // Enable cookies to be sent/received
+  credentials: true, 
   allowedHeaders: ["Content-Type", "Authorization", "Accept", "x-csrf-token", "X-Requested-With"],
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
 };
 
-// Apply CORS middleware globally
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));  // Pre-flight requests
+app.options("*", cors(corsOptions)); 
 
-// Other middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
+
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/products', require('./routes/productRoutes'));
+app.use('/cart', require('./routes/cartRoutes'));
 
 app.get("/", (req, res) => {
   try {
